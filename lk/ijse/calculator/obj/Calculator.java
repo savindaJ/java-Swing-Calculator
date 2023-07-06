@@ -32,9 +32,16 @@ public class Calculator extends JFrame implements ActionListener {
     private void setNumbers() {
         for (int i = 0; i < 10; i++) {
             buttons[i]=new JButton(i+"");
-            buttons[i].addActionListener(this);
         }
 
+        buttons[10] = new JButton("/");
+        buttons[11] = new JButton("-");
+        buttons[12] = new JButton("+");
+        buttons[13] = new JButton("*");
+        buttons[14] = new JButton("=");
+        buttons[15] = new JButton(".");
+        buttons[16] = new JButton("Back");
+        buttons[17] = new JButton("clear");
 
     }
 
