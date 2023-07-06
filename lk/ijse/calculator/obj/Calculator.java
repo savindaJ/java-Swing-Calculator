@@ -107,6 +107,31 @@ public class Calculator extends JFrame implements ActionListener {
                 txt1.setText(txt1.getText()+"8");
             else if (e.getSource()==buttons[9])
                 txt1.setText(txt1.getText()+"9");
+            else if (e.getSource()==buttons[10]){
+                operator="/";
+                System.out.println(operator);
+                num1= Double.parseDouble(txt1.getText());
+                numberOne= String.valueOf(num1);
+                txt1.setText("");
+            } else if (e.getSource()==buttons[11]){
+                operator="-";
+                System.out.println(operator);
+                num1= Double.parseDouble(txt1.getText());
+                numberOne= String.valueOf(num1);
+                txt1.setText("");
+            }else if (e.getSource()==buttons[12]){
+                operator="+";
+                num1= Double.parseDouble(txt1.getText());
+                numberOne= String.valueOf(num1);
+                txt1.setText("");
+            }else if (e.getSource()==buttons[13]){
+                operator="*";
+                num1= Double.parseDouble(txt1.getText());
+                numberOne= String.valueOf(num1);
+                txt1.setText("");
+            }
+
+
 
         }catch (Exception exception){
 
