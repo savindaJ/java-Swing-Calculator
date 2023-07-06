@@ -26,6 +26,12 @@ public class Calculator extends JFrame implements ActionListener {
     private JButton[] buttons =  new JButton[18];
 
     Calculator(){
+
+        setSize(400, 300);
+        setTitle("Calculator");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
         setNumbers();
     }
 
