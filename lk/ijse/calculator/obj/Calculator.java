@@ -31,12 +31,24 @@ public class Calculator extends JFrame implements ActionListener {
         setSize(400, 300);
         setTitle("Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null); // set size
 
         displayPanel = new JPanel(new FlowLayout(FlowLayout.CENTER,20,20));	//FlowLayout
         buttonPanel = new JPanel(new GridLayout(4, 4, 5, 5));
         downPanel=new JPanel(new FlowLayout(FlowLayout.LEADING,10,20));
         namePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+
+        txt1 = new JTextField(30);
+        txt1.setEditable(false);
+        displayPanel.add(txt1);
+
+
+        lblName = new JLabel();
+        lblName.setFont(new Font("Serif", Font.BOLD, 11));
+        lblName.setText("clear textField : ");
+        namePanel.add(lblName);
+
+
 
         setNumbers();
     }
