@@ -7,10 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends JFrame implements ActionListener {
 
-    private JPanel lblPanel;
     private final JTextField txt1;
-    private JTextField txt2;
-
 
     private String operator;
     private double num1;
@@ -26,7 +23,6 @@ public class Calculator extends JFrame implements ActionListener {
 
         JPanel displayPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 20));    //FlowLayout
         JPanel buttonPanel = new JPanel(new GridLayout(4, 4, 5, 5));
-        JPanel downPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 20));
         JPanel namePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
         txt1 = new JTextField(30);
@@ -57,7 +53,7 @@ public class Calculator extends JFrame implements ActionListener {
 
     private void setNumbers() {
         for (int i = 0; i < 10; i++) {
-            buttons[i]=new JButton(i+"");
+            buttons[i]=new JButton(String.valueOf(i));
         }
 
         buttons[10] = new JButton("/");
@@ -76,9 +72,7 @@ public class Calculator extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String source = e.getActionCommand();
         try {
-            String numberOne;
             if (e.getSource()==buttons[0])
                 txt1.setText(txt1.getText()+"0");
             else if (e.getSource()==buttons[1])
@@ -101,33 +95,26 @@ public class Calculator extends JFrame implements ActionListener {
                 txt1.setText(txt1.getText()+"9");
             else if (e.getSource()==buttons[10]){
                 operator="/";
-                System.out.println(operator);
                 num1= Double.parseDouble(txt1.getText());
-                numberOne = String.valueOf(num1);
                 txt1.setText("");
             } else if (e.getSource()==buttons[11]){
                 operator="-";
-                System.out.println(operator);
                 num1= Double.parseDouble(txt1.getText());
-                numberOne = String.valueOf(num1);
                 txt1.setText("");
             }else if (e.getSource()==buttons[12]){
                 operator="+";
                 num1= Double.parseDouble(txt1.getText());
-                numberOne = String.valueOf(num1);
                 txt1.setText("");
             }else if (e.getSource()==buttons[13]){
                 operator="*";
                 num1= Double.parseDouble(txt1.getText());
-                numberOne = String.valueOf(num1);
                 txt1.setText("");
             }else if (e.getSource()==buttons[15]){
                 txt1.setText(txt1.getText()+".");
             }else if (e.getSource()==buttons[16]){
                 String backnum=txt1.getText();
                 StringBuilder newnum= new StringBuilder();
-                for (int i = 0; i < backnum.length()-1; i++)
-                {
+                for (int i = 0; i < backnum.length()-1; i++) {
                     char x=backnum.charAt(i);
                     newnum.append(x);
                 }
