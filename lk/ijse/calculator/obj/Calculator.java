@@ -24,7 +24,7 @@ public class Calculator extends JFrame implements ActionListener {
     private double num2;
     private double result;
 
-    private JButton[] buttons =  new JButton[18];
+    private final JButton [] buttons =  new JButton[18];
 
     public Calculator(){
 
@@ -60,6 +60,8 @@ public class Calculator extends JFrame implements ActionListener {
         add(displayPanel, BorderLayout.PAGE_START);
         add(buttonPanel, BorderLayout.CENTER);
         add(namePanel, BorderLayout.SOUTH);
+
+
     }
 
     private void setNumbers() {
@@ -83,6 +85,31 @@ public class Calculator extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        String source = e.getActionCommand();
+        try {
+            if (e.getSource()==buttons[0])
+                txt1.setText(txt1.getText()+"0");
+            else if (e.getSource()==buttons[1])
+                txt1.setText(txt1.getText()+"1");
+            else if (e.getSource()==buttons[2])
+                txt1.setText(txt1.getText()+"2");
+            else if (e.getSource()==buttons[3])
+                txt1.setText(txt1.getText()+"3");
+            else if (e.getSource()==buttons[4])
+                txt1.setText(txt1.getText()+"4");
+            else if (e.getSource()==buttons[5])
+                txt1.setText(txt1.getText()+"5");
+            else if (e.getSource()==buttons[6])
+                txt1.setText(txt1.getText()+"6");
+            else if (e.getSource()==buttons[7])
+                txt1.setText(txt1.getText()+"7");
+            else if (e.getSource()==buttons[8])
+                txt1.setText(txt1.getText()+"8");
+            else if (e.getSource()==buttons[9])
+                txt1.setText(txt1.getText()+"9");
 
+        }catch (Exception exception){
+
+        }
     }
 }
