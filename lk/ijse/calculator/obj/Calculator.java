@@ -48,9 +48,15 @@ public class Calculator extends JFrame implements ActionListener {
         lblName.setText("clear textField : ");
         namePanel.add(lblName);
 
-
-
         setNumbers();
+
+        for (int i = 0; i < 15; i++) {
+            buttonPanel.add(buttons[i]);
+        }
+
+        add(displayPanel, BorderLayout.PAGE_START);
+        add(buttonPanel, BorderLayout.CENTER);
+        add(namePanel, BorderLayout.SOUTH);
     }
 
     private void setNumbers() {
