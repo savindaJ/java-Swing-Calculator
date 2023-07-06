@@ -50,9 +50,12 @@ public class Calculator extends JFrame implements ActionListener {
 
         setNumbers();
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 16; i++) {
             buttonPanel.add(buttons[i]);
         }
+
+        namePanel.add(buttons[16]);
+        namePanel.add(buttons[17]);
 
         add(displayPanel, BorderLayout.PAGE_START);
         add(buttonPanel, BorderLayout.CENTER);
