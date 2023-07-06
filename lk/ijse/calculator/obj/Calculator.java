@@ -140,6 +140,11 @@ public class Calculator extends JFrame implements ActionListener {
                     newnum+=x;
                 }
                 txt1.setText(newnum);
+            }else if (e.getSource()==buttons[17])
+                txt1.setText("");
+
+            if (e.getSource()==buttons[14]){
+
             }
 
 
