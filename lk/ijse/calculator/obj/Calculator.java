@@ -1,6 +1,7 @@
 package lk.ijse.calculator.obj;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -31,6 +32,11 @@ public class Calculator extends JFrame implements ActionListener {
         setTitle("Calculator");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+
+        displayPanel = new JPanel(new FlowLayout(FlowLayout.CENTER,20,20));	//FlowLayout
+        buttonPanel = new JPanel(new GridLayout(4, 4, 5, 5));
+        downPanel=new JPanel(new FlowLayout(FlowLayout.LEADING,10,20));
+        namePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
         setNumbers();
     }
