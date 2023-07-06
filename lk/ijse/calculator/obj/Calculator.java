@@ -43,6 +43,9 @@ public class Calculator extends JFrame implements ActionListener {
         buttons[16] = new JButton("Back");
         buttons[17] = new JButton("clear");
 
+        for (JButton button : buttons) {
+            button.addActionListener(this);
+        }
     }
 
     @Override
