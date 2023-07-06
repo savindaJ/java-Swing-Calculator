@@ -8,10 +8,8 @@ import java.awt.event.ActionListener;
 public class Calculator extends JFrame implements ActionListener {
 
     private final JTextField txt1;
-
     private String operator;
     private double num1;
-
     private final JButton [] buttons =  new JButton[18];
 
     public Calculator(){
@@ -112,13 +110,13 @@ public class Calculator extends JFrame implements ActionListener {
             }else if (e.getSource()==buttons[15]){
                 txt1.setText(txt1.getText()+".");
             }else if (e.getSource()==buttons[16]){
-                String backnum=txt1.getText();
-                StringBuilder newnum= new StringBuilder();
-                for (int i = 0; i < backnum.length()-1; i++) {
-                    char x=backnum.charAt(i);
-                    newnum.append(x);
+                String backoff=txt1.getText();
+                StringBuilder newness= new StringBuilder();
+                for (int i = 0; i < backoff.length()-1; i++) {
+                    char x=backoff.charAt(i);
+                    newness.append(x);
                 }
-                txt1.setText(newnum.toString());
+                txt1.setText(newness.toString());
 
             }else if (e.getSource()==buttons[17])
                 txt1.setText("");
