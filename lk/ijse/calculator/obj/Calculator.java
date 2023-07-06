@@ -146,30 +146,39 @@ public class Calculator extends JFrame implements ActionListener {
                 txt1.setText("");
 
             if (e.getSource()==buttons[14]){
-                if (operator.equals("+")){
-                    numberTwo=txt1.getText();
-                    num2= Double.parseDouble(numberTwo);
-                    result=num1+num2;
-                    String result1 = String.valueOf(result);
-                    txt1.setText(result1);
-                }else if (operator.equals("-")){
-                    numberTwo=txt1.getText();
-                    num2= Double.parseDouble(numberTwo);
-                    result=num1-num2;
-                    String result1 = String.valueOf(result);
-                    txt1.setText(result1);
-                }else if (operator.equals("*")){
-                    numberTwo=txt1.getText();
-                    num2= Double.parseDouble(numberTwo);
-                    result=num1*num2;
-                    String result1 = String.valueOf(result);
-                    txt1.setText(result1);
-                }else if (operator.equals("/")){
-                    numberTwo=txt1.getText();
-                    num2= Double.parseDouble(numberTwo);
-                    result=num1/num2;
-                    String result1 = String.valueOf(result);
-                    txt1.setText(result1);
+                switch (operator) {
+                    case "+": {
+                        numberTwo = txt1.getText();
+                        num2 = Double.parseDouble(numberTwo);
+                        result = num1 + num2;
+                        String result1 = String.valueOf(result);
+                        txt1.setText(result1);
+                        break;
+                    }
+                    case "-": {
+                        numberTwo = txt1.getText();
+                        num2 = Double.parseDouble(numberTwo);
+                        result = num1 - num2;
+                        String result1 = String.valueOf(result);
+                        txt1.setText(result1);
+                        break;
+                    }
+                    case "*": {
+                        numberTwo = txt1.getText();
+                        num2 = Double.parseDouble(numberTwo);
+                        result = num1 * num2;
+                        String result1 = String.valueOf(result);
+                        txt1.setText(result1);
+                        break;
+                    }
+                    case "/": {
+                        numberTwo = txt1.getText();
+                        num2 = Double.parseDouble(numberTwo);
+                        result = num1 / num2;
+                        String result1 = String.valueOf(result);
+                        txt1.setText(result1);
+                        break;
+                    }
                 }
             }
 
