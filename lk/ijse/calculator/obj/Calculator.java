@@ -1,7 +1,5 @@
 package lk.ijse.calculator.obj;
 
-import javafx.scene.control.Alert;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,14 +7,11 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends JFrame implements ActionListener {
 
-    private JPanel buttonPanel;
-    private JPanel displayPanel;
     private JPanel namePanel;
     private JPanel downPanel;
     private JPanel lblPanel;
     private JTextField txt1;
     private JTextField txt2;
-    private JLabel lblName;
 
 
     private String operator;
@@ -35,8 +30,8 @@ public class Calculator extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // set size
 
-        displayPanel = new JPanel(new FlowLayout(FlowLayout.CENTER,20,20));	//FlowLayout
-        buttonPanel = new JPanel(new GridLayout(4, 4, 5, 5));
+        JPanel displayPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 20));    //FlowLayout
+        JPanel buttonPanel = new JPanel(new GridLayout(4, 4, 5, 5));
         downPanel=new JPanel(new FlowLayout(FlowLayout.LEADING,10,20));
         namePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
@@ -45,7 +40,7 @@ public class Calculator extends JFrame implements ActionListener {
         displayPanel.add(txt1);
 
 
-        lblName = new JLabel();
+        JLabel lblName = new JLabel();
         lblName.setFont(new Font("Serif", Font.BOLD, 11));
         lblName.setText("clear textField : ");
         namePanel.add(lblName);
@@ -135,13 +130,14 @@ public class Calculator extends JFrame implements ActionListener {
                 txt1.setText(txt1.getText()+".");
             }else if (e.getSource()==buttons[16]){
                 String backnum=txt1.getText();
-                String newnum="";
+                StringBuilder newnum= new StringBuilder();
                 for (int i = 0; i < backnum.length()-1; i++)
                 {
                     char x=backnum.charAt(i);
-                    newnum+=x;
+                    newnum.append(x);
                 }
-                txt1.setText(newnum);
+                txt1.setText(newnum.toString());
+
             }else if (e.getSource()==buttons[17])
                 txt1.setText("");
 
