@@ -1,5 +1,7 @@
 package lk.ijse.calculator.obj;
 
+import javafx.scene.control.Alert;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -169,13 +171,10 @@ public class Calculator extends JFrame implements ActionListener {
                     String result1 = String.valueOf(result);
                     txt1.setText(result1);
                 }
-
             }
 
-
-
         }catch (Exception exception){
-
+            txt1.setText("something went wrong !");
         }
     }
 }
