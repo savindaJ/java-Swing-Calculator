@@ -7,19 +7,13 @@ import java.awt.event.ActionListener;
 
 public class Calculator extends JFrame implements ActionListener {
 
-    private JPanel namePanel;
-    private JPanel downPanel;
     private JPanel lblPanel;
-    private JTextField txt1;
+    private final JTextField txt1;
     private JTextField txt2;
 
 
     private String operator;
-    private String numberOne;
-    private String numberTwo;
     private double num1;
-    private double num2;
-    private double result;
 
     private final JButton [] buttons =  new JButton[18];
 
@@ -32,8 +26,8 @@ public class Calculator extends JFrame implements ActionListener {
 
         JPanel displayPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 20));    //FlowLayout
         JPanel buttonPanel = new JPanel(new GridLayout(4, 4, 5, 5));
-        downPanel=new JPanel(new FlowLayout(FlowLayout.LEADING,10,20));
-        namePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        JPanel downPanel = new JPanel(new FlowLayout(FlowLayout.LEADING, 10, 20));
+        JPanel namePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 
         txt1 = new JTextField(30);
         txt1.setEditable(false);
@@ -84,6 +78,7 @@ public class Calculator extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String source = e.getActionCommand();
         try {
+            String numberOne;
             if (e.getSource()==buttons[0])
                 txt1.setText(txt1.getText()+"0");
             else if (e.getSource()==buttons[1])
@@ -108,23 +103,23 @@ public class Calculator extends JFrame implements ActionListener {
                 operator="/";
                 System.out.println(operator);
                 num1= Double.parseDouble(txt1.getText());
-                numberOne= String.valueOf(num1);
+                numberOne = String.valueOf(num1);
                 txt1.setText("");
             } else if (e.getSource()==buttons[11]){
                 operator="-";
                 System.out.println(operator);
                 num1= Double.parseDouble(txt1.getText());
-                numberOne= String.valueOf(num1);
+                numberOne = String.valueOf(num1);
                 txt1.setText("");
             }else if (e.getSource()==buttons[12]){
                 operator="+";
                 num1= Double.parseDouble(txt1.getText());
-                numberOne= String.valueOf(num1);
+                numberOne = String.valueOf(num1);
                 txt1.setText("");
             }else if (e.getSource()==buttons[13]){
                 operator="*";
                 num1= Double.parseDouble(txt1.getText());
-                numberOne= String.valueOf(num1);
+                numberOne = String.valueOf(num1);
                 txt1.setText("");
             }else if (e.getSource()==buttons[15]){
                 txt1.setText(txt1.getText()+".");
@@ -142,6 +137,9 @@ public class Calculator extends JFrame implements ActionListener {
                 txt1.setText("");
 
             if (e.getSource()==buttons[14]){
+                String numberTwo;
+                double num2;
+                double result;
                 switch (operator) {
                     case "+": {
                         numberTwo = txt1.getText();
