@@ -41,8 +41,8 @@ public class Calculator extends JFrame implements ActionListener {
 
 
         JLabel lblName = new JLabel();
-        lblName.setFont(new Font("Serif", Font.BOLD, 11));
-        lblName.setText("clear textField : ");
+        lblName.setFont(new Font("Serif", Font.BOLD, 9));
+        lblName.setText("developed by savindaJ .");
         namePanel.add(lblName);
 
         setNumbers();
